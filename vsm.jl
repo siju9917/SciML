@@ -121,8 +121,8 @@ function vsm(dx,x,p_ode,t)
     Vr_cnv =   sin(θ_oc + pi/2)*Vd_cnv_ref + cos(θ_oc + pi/2)*Vq_cnv_ref
     Vi_cnv =  -cos(θ_oc + pi/2)*Vd_cnv_ref + sin(θ_oc + pi/2)*Vq_cnv_ref
 
-    Vr_pcc = Vm(t)*cos(Vθ(t)) + (ir_out*Rtrans - ii_out*Xtrans)
-    Vi_pcc = Vm(t)*sin(Vθ(t)) + (ir_out*Xtrans + ii_out*Rtrans)
+    Vr_pcc = Vm(t)*cos(Vθ(t)) + (ir_filter*Rtrans - ii_filter*Xtrans)
+    Vi_pcc = Vm(t)*sin(Vθ(t)) + (ir_filter*Xtrans + ii_filter*Rtrans)
 
     dx[i__ir_cnv]= (ω_base/lf) *                                                #docs:(5a)
       (Vr_cnv - vr_filter - rf*ir_cnv + ω_sys*lf*ii_cnv)

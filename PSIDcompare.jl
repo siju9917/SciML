@@ -55,7 +55,7 @@ M = MassMatrix(19,0)
 vsm_func = ODEFunction(vsm, mass_matrix = M)
 vsm_prob = ODEProblem(vsm_func, x₀, tspan, p_ode)
 sol = solve(vsm_prob, solver, abstol=abstol, reltol=reltol,  saveat=tsteps )
-p2 = plot(sol.t,sol[5,:],"vsm real output current (scratch)")
+p2 = plot(sol.t,sol[5,:],label ="vsm real output current (scratch)")
 
 plot(p1,p2,layout=(2,1))
 
